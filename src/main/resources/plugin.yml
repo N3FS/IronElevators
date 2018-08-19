@@ -1,0 +1,8 @@
+name: ${project.name}
+version: ${project.version}
+main: me.ScarleTomato.IronElevators.IronElevators
+description: Easy Iron Block Elevators
+permissions:
+  ironelevators.use:
+    default: true
+    description: Allow a player to teleport between elevators
