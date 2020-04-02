@@ -2,6 +2,7 @@ name: ${project.name}
 version: ${project.version}
 main: me.ScarleTomato.IronElevators.IronElevators
 description: Easy Iron Block Elevators
+api-version: 1.13
 permissions:
   ironelevators.use:
     default: true

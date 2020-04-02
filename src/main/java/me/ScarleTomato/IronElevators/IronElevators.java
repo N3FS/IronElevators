@@ -1,6 +1,5 @@
 package me.ScarleTomato.IronElevators;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -14,7 +13,7 @@ public final class IronElevators extends JavaPlugin {
 
     int MIN_ELEVATION = 3, MAX_ELEVATION = 14;
     Material ELEVATOR_MATERIAL = Material.IRON_BLOCK;
-    Sound ELEVATOR_WHOOSH = defaultSound();
+    Sound ELEVATOR_WHOOSH = Sound.ENTITY_IRON_GOLEM_ATTACK;
 
     @Override
     public void onEnable() {
@@ -57,18 +56,5 @@ public final class IronElevators extends JavaPlugin {
         } catch (Exception ex) {
             getLogger().warning("Failed to load config: " + ex.getLocalizedMessage());
         }
-    }
-
-    private static Sound defaultSound() {
-        String sound;
-        String ver = Bukkit.getServer().getVersion();
-        if (ver.contains("MC: 1.13") || ver.contains("MC: 1.13.")) {
-            sound = "ENTITY_IRON_GOLEM_ATTACK";
-        } else if (ver.contains("MC: 1.12") || ver.contains("MC: 1.12.")) {
-            sound = "ENTITY_IRONGOLEM_ATTACK";
-        } else {
-            throw new IllegalArgumentException("Unsupported version");
-        }
-        return Sound.valueOf(sound);
     }
 }
