@@ -1,6 +1,5 @@
 package me.ScarleTomato.IronElevators;
 
-import lombok.RequiredArgsConstructor;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -10,10 +9,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-@RequiredArgsConstructor
 public final class EventListener implements Listener {
 
     private final IronElevators plugin;
+
+    public EventListener(IronElevators plugin) {
+        this.plugin = plugin;
+    }
 
     private boolean searchFloor(Block floor) {
         return floor.getType() == plugin.ELEVATOR_MATERIAL
